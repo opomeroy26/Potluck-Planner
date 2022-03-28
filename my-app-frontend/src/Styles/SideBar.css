@@ -1,0 +1,86 @@
+/* h1 {
+    text-shadow: 2px 2px 0px #702963;
+    
+}
+
+hr {
+    margin: none;
+    border-radius: 45px;
+}
+
+.toph1{
+margin-top:15px;
+}
+
+
+#logohr {
+    width: 120px;
+    margin-left:20px;
+    margin-right:20px;
+    border: 2px #702963;
+    background-color: #702963;
+    height: 5px !important;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.wrapper {
+    
+    width: 100%;
+}
+
+#logo {
+    margin-top:15px;
+    height: 160px;
+    width: 160px;
+    background-color: #9E7BB5;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#sidebar {
+    
+    margin-right:50px;
+    width:200px;
+    position: fixed;
+    left: 0;
+    top:0;
+    height: auto;
+    z-index: 999;
+    background: #eae6f4;
+    color: #fff;
+    height:100vh !important;
+    text-align: center;
+}
+
+#homeSubmenu {
+    text-align: center;
+
+}
+
+
+.btn-secondary {
+    width: 140px;
+    height: 45px;
+    
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color:#BE93D4 ;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    }
+  
+  .btn-secondary:hover {
+    background-color: #A45EE5;
+    box-shadow: 0px 15px 20px #9E7BB5;
+    color: #fff;
+    transform: translateY(-7px);
+  } */
+
