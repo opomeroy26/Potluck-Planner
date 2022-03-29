@@ -6,18 +6,30 @@ import HomePage from "./HomePage";
 import MyEvents from "./MyEvents";
 import SavedEvents from "./SavedEvents";
 import {Switch, Route} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import '../App.css';
 import '../index.css';
 import '../Styles/SideBar.css'
 
 function App() {
     const [events, setEvents] = useState([])
+    const history = useHistory();
 
     useEffect(()=> {
         fetch("http://localhost:9292/events")
         .then((r) => r.json())
         .then(setEvents)
     }, [])
+
+    function onReturnToFeedClick(){
+        history.push('/')
+    }
+
+    function onAddToEventsFeed(event){
+        history.push('/')
+        console.log("adding to events")
+        setEvents([...events, event])
+    }
 
 
     return (
@@ -34,7 +46,10 @@ function App() {
             </Route>
 
             <Route exact path = '/createevent'>
-                <CreateEvent />
+                <CreateEvent 
+                    handleAddToEventsFeed = {onAddToEventsFeed}
+                    handleReturnToFeed = {onReturnToFeedClick}
+                />
             </Route>
 
             <Route exact path = "/myevents">

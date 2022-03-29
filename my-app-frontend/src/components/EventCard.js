@@ -12,13 +12,15 @@ function EventCard({event}){
                 <h4 className="card-text">{details}</h4>
             </div>
             <div className="list-group-flush">
-                <li>{food_suggestions}</li>
-                <li>Two</li>
-                <li>Three</li>
+                <ul>{food_suggestions}</ul> 
+                {/* Need to put it in nested array if I want to check off the items or put them into list form */}
+                {/* <li>Two</li>
+                <li>Three</li> */}
             </div>
             <div>
                 <button>Press me</button>
-                <button>Press me too</button>
+                <button>Remind me later
+                </button>
             </div>
         </div>
     )
