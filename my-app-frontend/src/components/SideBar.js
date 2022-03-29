@@ -9,9 +9,11 @@ function SideBar(){
                 <ul className= 'list-unstyled componenets' id='homeSubmenu'>
                     <h1>SideBar</h1>
                     <button>Create new Event</button>
-                    <li>Link Somewhere</li>
-                    <li>Another Link</li>
-                    <li>Filters</li>
+                    <li>Holidays</li>
+                    <li>Birthdays</li>
+                    <li>Celebrations</li>
+                    <li>Miscellaneous</li>
+                    <button>filterbydate</button>
             </ul>
             </nav>
         </div>
