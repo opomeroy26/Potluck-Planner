@@ -6,7 +6,6 @@ import HomePage from "./HomePage";
 import MyEvents from "./MyEvents";
 import SavedEvents from "./SavedEvents";
 import {Switch, Route} from "react-router-dom";
-import {useEffect, useState} from "react";
 import '../App.css';
 import '../index.css';
 import '../Styles/SideBar.css'
