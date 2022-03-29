@@ -8,6 +8,7 @@ function SideBar(){
             <nav id ='sidebar'>
                 <ul className= 'list-unstyled componenets' id='homeSubmenu'>
                     <h1>SideBar</h1>
+                    <button>Create new Event</button>
                     <li>Link Somewhere</li>
                     <li>Another Link</li>
                     <li>Filters</li>

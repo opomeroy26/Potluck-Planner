@@ -75,3 +75,9 @@
     
   width: 100%;
 }
+
+.card-style {
+  background-color: blue;
+  margin-left: 100px;
+  width: 320px
+}
