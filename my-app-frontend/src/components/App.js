@@ -9,6 +9,7 @@ import Holidays from "./Holidays";
 import Celebrations from './Celebrations';
 import Birthdays from "./Birthdays";
 import Miscellaneous from "./Miscellaneous";
+import FilteredEvents from "./FilteredEvents";
 import {Switch, Route} from "react-router-dom";
 import {useHistory} from "react-router-dom";
 import '../App.css';
@@ -23,6 +24,7 @@ function App() {
     const [celebrations, setCelebrations] = useState([])
     const [birthdays, setBirthdays] = useState([])
     const [miscellaneous, setMiscellaneous] = useState([])
+    const [filteredEvents, setFilteredEvents] = useState([])
 
     useEffect(()=> {
         fetch("http://localhost:9292/events")
@@ -52,6 +54,12 @@ function App() {
         fetch("http://localhost:9292/categories/84")
         .then((r)=> r.json())
         .then(setMiscellaneous)
+    },[])
+
+    useEffect(()=> {
+        fetch("http://localhost:9292/events/order")
+        .then((r) => r.json())
+        .then(setFilteredEvents)
     },[])
 
     function onDeleteClick(event){
@@ -86,6 +94,10 @@ function App() {
         history.push('/')
     }
 
+    function onFilterDateClick(){
+        history.push('/eventsbydate')
+    }
+
     function onAddToEventsFeed(event){
         history.push('/')
         console.log("adding to events")
@@ -107,6 +119,7 @@ function App() {
             handleCelebrationsClick = {onCelebrationsClick}
             handleBirthdaysClick= {onBirthdaysClick}
             handleMiscellaneousClick={onMiscellaneousClick}
+            handleFilterDateClick={onFilterDateClick}
         />
         <div className='app-body-container'>
 
@@ -157,6 +170,12 @@ function App() {
             <Route exact path="/miscellaneous">
                 <Miscellaneous
                     miscellaneous = {miscellaneous}
+                />
+            </Route>
+
+            <Route exact path="/eventsbydate">
+                <FilteredEvents
+                    filteredEvents = {filteredEvents}
                 />
             </Route>
 

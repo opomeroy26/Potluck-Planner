@@ -10,7 +10,7 @@ function Celebrations({celebrations}){
         />
     ))
     return(
-        <div>
+        <div className='row content d-flex justify-content-center m-2 p-2'>
             {celebration}
         </div>
     )

@@ -3,7 +3,7 @@ import '../Styles/SideBar.css'
 import '../App.css'
 import {NavLink} from "react-router-dom"
 
-function SideBar({handleHolidayClick, handleAllEventsClick, handleCelebrationsClick, handleBirthdaysClick, handleMiscellaneousClick}){
+function SideBar({handleHolidayClick, handleAllEventsClick, handleCelebrationsClick, handleBirthdaysClick, handleMiscellaneousClick, handleFilterDateClick}){
 
 
     return(
@@ -20,7 +20,7 @@ function SideBar({handleHolidayClick, handleAllEventsClick, handleCelebrationsCl
                     <NavLink to="/myevents" exact activeStyle = {{background: "white", color:"green"}} className='btn btn-secondary m3'>My Events</NavLink>
                     <li>Link to Shopping list</li>
                     <div>
-                        <button>filterbydate</button>
+                        <button onClick={handleFilterDateClick}>filterbydate</button>
                     </div>
             </ul>
             </nav>

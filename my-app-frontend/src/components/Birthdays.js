@@ -10,7 +10,7 @@ function Birthdays({birthdays}){
         />
     ))
     return(
-        <div>
+        <div className='row content d-flex justify-content-center m-2 p-2'>
             {birthday}
         </div>
     )

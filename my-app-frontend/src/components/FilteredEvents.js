@@ -1,8 +1,8 @@
 import React from "react";
 import EventCard from "./EventCard";
 
-function Holidays({holidays}){
-    const holiday = holidays.events.map((holidayObj) => (
+function FilteredEvents({filteredEvents}){
+    const filtEvent = filteredEvents.map((holidayObj) => (
         <EventCard 
             key={holidayObj.id}
             event={holidayObj}
@@ -11,9 +11,9 @@ function Holidays({holidays}){
     ))
     return(
         <div className='row content d-flex justify-content-center m-2 p-2'>
-            {holiday}
+            {filtEvent}
         </div>
     )
 }
 
-export default Holidays;
+export default FilteredEvents;
