@@ -14,6 +14,7 @@ import '../Styles/SideBar.css'
 function App() {
     const [events, setEvents] = useState([])
     const history = useHistory();
+    const [myEvents, setMyEvents] = useState([])
 
     useEffect(()=> {
         fetch("http://localhost:9292/events")
@@ -29,6 +30,11 @@ function App() {
         history.push('/')
         console.log("adding to events")
         setEvents([...events, event])
+    }
+
+    function onAddToMyEvents(event){
+        console.log("adding to your events page")
+        setMyEvents([...events, event])
     }
 
 
@@ -49,11 +55,14 @@ function App() {
                 <CreateEvent 
                     handleAddToEventsFeed = {onAddToEventsFeed}
                     handleReturnToFeed = {onReturnToFeedClick}
+                    handleAddToMyEvents = {onAddToMyEvents}
                 />
             </Route>
 
             <Route exact path = "/myevents">
-                <MyEvents />
+                <MyEvents 
+                    events = {myEvents}
+                />
             </Route>
 
             <Route exact path = "/savedevents">

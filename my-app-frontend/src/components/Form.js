@@ -69,15 +69,15 @@ function Form({handleChange, handleSubmit, formState}){
                     <label>Category:</label>
                     <select
                         id='category'
-                        value={formState.category}
-                        name='category'
+                        value={formState.category_id}
+                        name='category_id'
                         onChange={handleChange}
                     >
                         <option value="NA">Choose a Category</option>
-                        <option value="Holiday">Holiday</option>
-                        <option value="Birthday">Birthday</option>
-                        <option value="Celebration">Celebration</option>
-                        <option value="Miscellaneous">Miscellaneous</option>
+                        <option value="61">Holiday</option>
+                        <option value="62">Birthday</option>
+                        <option value="63">Celebration</option>
+                        <option value="64">Miscellaneous</option>
                     </select>
                 </div>
                 <button type='submit' className='btn btn-secondary'>Create Event</button>

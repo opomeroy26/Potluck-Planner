@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Form from "./Form"
 
-function CreateEvent({handleAddToEventsFeed, handleReturnToFeed}){
+function CreateEvent({handleAddToEventsFeed, handleReturnToFeed, handleAddToMyEvents}){
 
     const initialFormState = {
         event_name:'',
@@ -33,6 +33,7 @@ function CreateEvent({handleAddToEventsFeed, handleReturnToFeed}){
         })
         .then(handleAddToEventsFeed(formState))
         .then(setFormState(initialFormState))
+        .then(handleAddToMyEvents(formState))
 
     }
 
