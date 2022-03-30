@@ -5,6 +5,10 @@ import Header from "./Header";
 import HomePage from "./HomePage";
 import MyEvents from "./MyEvents";
 import SavedEvents from "./SavedEvents";
+import Holidays from "./Holidays";
+import Celebrations from './Celebrations';
+import Birthdays from "./Birthdays";
+import Miscellaneous from "./Miscellaneous";
 import {Switch, Route} from "react-router-dom";
 import {useHistory} from "react-router-dom";
 import '../App.css';
@@ -15,12 +19,68 @@ function App() {
     const [events, setEvents] = useState([])
     const history = useHistory();
     const [myEvents, setMyEvents] = useState([])
+    const [holidays, setHolidays] = useState([])
+    const [celebrations, setCelebrations] = useState([])
+    const [birthdays, setBirthdays] = useState([])
+    const [miscellaneous, setMiscellaneous] = useState([])
 
     useEffect(()=> {
         fetch("http://localhost:9292/events")
         .then((r) => r.json())
         .then(setEvents)
     }, [])
+
+    useEffect(()=> {
+        fetch("http://localhost:9292/categories/81")
+        .then((r)=> r.json())
+        .then(setHolidays)
+    }, [])
+
+    useEffect(()=> {
+        fetch("http://localhost:9292/categories/82")
+        .then((r)=> r.json())
+        .then(setBirthdays)
+    },[])
+
+    useEffect(()=> {
+        fetch("http://localhost:9292/categories/83")
+        .then((r)=> r.json())
+        .then(setCelebrations)
+    },[])
+
+    useEffect(()=> {
+        fetch("http://localhost:9292/categories/84")
+        .then((r)=> r.json())
+        .then(setMiscellaneous)
+    },[])
+
+    function onDeleteClick(event){
+        console.log("deleting event", event)
+        fetch(`http://localhost:9292/events/${event.id}`, {method: "DELETE"})
+        setEvents(events.filter((eventItem) => eventItem !== event))
+
+    }
+
+    function onHolidayClick(){
+            history.push('/holidays')
+            console.log("holiday clicked")
+        }
+    
+    function onCelebrationsClick(){
+        history.push('/celebrations')
+    }
+
+    function onAllEventsClick(){
+        history.push('/')
+    }
+
+    function onBirthdaysClick(){
+        history.push('/birthdays')
+    }
+
+    function onMiscellaneousClick(){
+        history.push('/miscellaneous')
+    }
 
     function onReturnToFeedClick(){
         history.push('/')
@@ -41,13 +101,20 @@ function App() {
     return (
     <div className="App">
         <Header />
-        <SideBar />
+        <SideBar 
+            handleHolidayClick = {onHolidayClick}
+            handleAllEventsClick = {onAllEventsClick}
+            handleCelebrationsClick = {onCelebrationsClick}
+            handleBirthdaysClick= {onBirthdaysClick}
+            handleMiscellaneousClick={onMiscellaneousClick}
+        />
         <div className='app-body-container'>
 
         <Switch>
             <Route exact path ="/">
                 <HomePage 
                     events = {events}
+                    handleDeleteClick = {onDeleteClick}
                 />
             </Route>
 
@@ -68,6 +135,32 @@ function App() {
             <Route exact path = "/savedevents">
                 <SavedEvents />
             </Route>
+
+            <Route exact path ="/holidays">
+                <Holidays 
+                    holidays = {holidays}
+                />
+            </Route>
+
+            <Route exact path="/celebrations">
+                <Celebrations
+                    celebrations = {celebrations}
+                />
+            </Route>
+
+            <Route exact path="/birthdays">
+                <Birthdays
+                    birthdays = {birthdays}
+                />
+            </Route>
+
+            <Route exact path="/miscellaneous">
+                <Miscellaneous
+                    miscellaneous = {miscellaneous}
+                />
+            </Route>
+
+
 
         </Switch>
         

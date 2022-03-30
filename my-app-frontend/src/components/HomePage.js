@@ -1,11 +1,12 @@
 import React from 'react';
 import EventCard from "./EventCard";
 
-function HomePage({events}) {
+function HomePage({events, handleDeleteClick}) {
     const event = events.map((eventObj) => (
         <EventCard
             key={eventObj.id}
             event={eventObj}
+            handleDeleteClick={handleDeleteClick}
         />
     ))
     return (

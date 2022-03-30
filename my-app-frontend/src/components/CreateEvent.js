@@ -18,7 +18,7 @@ function CreateEvent({handleAddToEventsFeed, handleReturnToFeed, handleAddToMyEv
     const handleChange = (e)=> {
         const {name, value} = e.target;
         // console.log(e.target.value)
-        setFormState(formState =>({...formState, [name]: value}))
+        setFormState(formState => ({...formState, [name]: value}))
     }
 
     function handleSubmit(e){
@@ -33,7 +33,8 @@ function CreateEvent({handleAddToEventsFeed, handleReturnToFeed, handleAddToMyEv
         })
         .then(handleAddToEventsFeed(formState))
         .then(setFormState(initialFormState))
-        .then(handleAddToMyEvents(formState))
+        // .then(handleAddToMyEvents(formState))
+
 
     }
 
