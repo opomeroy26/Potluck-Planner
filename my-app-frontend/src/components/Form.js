@@ -3,7 +3,7 @@ import React from "react"
 function Form({handleChange, handleSubmit, formState}){
     return (
         <div>
-            Form
+            
             <form className='mb-3' onSubmit={handleSubmit}>
                 <div className='form-row'>
                 <label>Event Name:</label>

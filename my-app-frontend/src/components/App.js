@@ -5,6 +5,7 @@ import Header from "./Header";
 import HomePage from "./HomePage";
 import MyEvents from "./MyEvents";
 import SavedEvents from "./SavedEvents";
+import ShoppingList from "./ShoppingList";
 import Holidays from "./Holidays";
 import Celebrations from './Celebrations';
 import Birthdays from "./Birthdays";
@@ -25,6 +26,7 @@ function App() {
     const [birthdays, setBirthdays] = useState([])
     const [miscellaneous, setMiscellaneous] = useState([])
     const [filteredEvents, setFilteredEvents] = useState([])
+    const [shoppingList, setShoppingList] = useState([])
 
     useEffect(()=> {
         fetch("http://localhost:9292/events")
@@ -33,25 +35,25 @@ function App() {
     }, [])
 
     useEffect(()=> {
-        fetch("http://localhost:9292/categories/81")
+        fetch("http://localhost:9292/categories/85")
         .then((r)=> r.json())
         .then(setHolidays)
     }, [])
 
     useEffect(()=> {
-        fetch("http://localhost:9292/categories/82")
+        fetch("http://localhost:9292/categories/86")
         .then((r)=> r.json())
         .then(setBirthdays)
     },[])
 
     useEffect(()=> {
-        fetch("http://localhost:9292/categories/83")
+        fetch("http://localhost:9292/categories/87")
         .then((r)=> r.json())
         .then(setCelebrations)
     },[])
 
     useEffect(()=> {
-        fetch("http://localhost:9292/categories/84")
+        fetch("http://localhost:9292/categories/88")
         .then((r)=> r.json())
         .then(setMiscellaneous)
     },[])
@@ -61,6 +63,12 @@ function App() {
         .then((r) => r.json())
         .then(setFilteredEvents)
     },[])
+
+    useEffect(() => {
+        fetch("http://localhost:9292/shoppinglist")
+        .then((r)=> r.json())
+        .then(setShoppingList)
+    }, [])
 
     function onDeleteClick(event){
         console.log("deleting event", event)
@@ -106,7 +114,14 @@ function App() {
 
     function onAddToMyEvents(event){
         console.log("adding to your events page")
-        setMyEvents([...events, event])
+        setMyEvents([event, ...events])
+    }
+
+    function onAddToMyShoppingList(item){
+        // e.preventDefault()
+        console.log("adding to shopping list")
+        setShoppingList([...shoppingList, item])
+
     }
 
 
@@ -148,6 +163,15 @@ function App() {
             <Route exact path = "/savedevents">
                 <SavedEvents />
             </Route>
+
+            <Route exact path = "/shoppinglist">
+                <ShoppingList 
+                    shoppingList = {shoppingList}
+                    handleAddToShoppingList = {onAddToMyShoppingList}
+                />
+            </Route>
+
+
 
             <Route exact path ="/holidays">
                 <Holidays 

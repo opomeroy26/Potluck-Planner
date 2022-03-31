@@ -42,8 +42,12 @@ function CreateEvent({handleAddToEventsFeed, handleReturnToFeed, handleAddToMyEv
     return(
         <div>
             <h1> Create your Event </h1>
-            <button onClick={handleReturnToFeed}>Return to Feed</button>
             <Form handleChange={handleChange} handleSubmit={handleSubmit} formState={formState}/>
+            <button onClick={handleReturnToFeed}>Return to Feed</button>
+            
+
+            
+
         </div>
     )
 }

@@ -21,9 +21,18 @@ function EventCard({event, handleDeleteClick}){
                     <li>Three</li> */}
                 </div>
                 <div>
-                    <button>Press me</button>
-                    <button>Remind me later</button>
                     <button onClick={()=>handleDeleteClick(event)}>Delete Event</button>
+                    <form id="comment-form" className="comment-form">
+                        <input
+                            className="comment-input"
+                            type="text"
+                            name="comment"
+                            id="comment"
+                            placeholder="Add a comment"
+                        />
+                        <button className="comment-button" type="submit">Post</button>
+                    </form>
+
                 </div>
             </div>
         )
@@ -44,9 +53,17 @@ function EventCard({event, handleDeleteClick}){
                     <li>Three</li> */}
                 </div>
                 <div>
-                    <button>Press me</button>
-                    <button>Remind me later
-                    </button>
+                    <button>Attending</button> <button>Not attending</button>
+                    <form id="comment-form" className="comment-form">
+                        <input
+                            className="comment-input"
+                            type="text"
+                            name="comment"
+                            id="comment"
+                            placeholder="Add a comment"
+                        />
+                        <button className="comment-button" type="submit">Post</button>
+                    </form>
                 </div>
             </div>
         )
