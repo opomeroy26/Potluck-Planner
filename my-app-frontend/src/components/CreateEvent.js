@@ -24,6 +24,18 @@ function CreateEvent({handleAddToEventsFeed, handleReturnToFeed, handleAddToMyEv
 
     function handleSubmit(e){
         e.preventDefault()
+        fetch("http://localhost:9292/myevents", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formState),
+        })
+        // .then(handleAddToEventsFeed(formState))
+        .then(handleAddToMyEvents(formState))
+        // .then(setFormState(initialFormState))
+
+
         fetch("http://localhost:9292/events", {
             method: 'POST',
             headers: {
@@ -32,7 +44,7 @@ function CreateEvent({handleAddToEventsFeed, handleReturnToFeed, handleAddToMyEv
             body: JSON.stringify(formState),
         })
         .then(handleAddToEventsFeed(formState))
-        .then(handleAddToMyEvents(formState))
+        // .then(handleAddToMyEvents(formState))
         .then(setFormState(initialFormState))
 
 

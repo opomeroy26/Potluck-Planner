@@ -35,6 +35,12 @@ function App() {
     }, [])
 
     useEffect(()=> {
+        fetch("http://localhost:9292/myevents")
+        .then((r)=> r.json())
+        .then(setMyEvents)
+    }, [])
+
+    useEffect(()=> {
         fetch("http://localhost:9292/categories/85")
         .then((r)=> r.json())
         .then(setHolidays)
