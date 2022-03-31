@@ -1,8 +1,8 @@
 
 .App {
   text-align: center;
-  font-family: 'Roboto';
-  background-color:#F2F4F3;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #F2F4F3;
 }
 
 .App-header {
@@ -11,9 +11,11 @@
   min-height: 10vh;
   justify-content: center;
   font-size: calc(5px + 2vmin);
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   color: white;
+  /* text-align: left; */
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 .app-body-container {
   background-color:#F2F4F3;
@@ -80,4 +82,32 @@
   background-color: blue;
   margin-left: 100px;
   width: 320px
+}
+
+#btn {
+  background-color: white;
+  color: black;
+  width:flex
+}
+
+#btn-two{
+  color:white;
+  width: flex;
+}
+
+#br{
+  color: white;
+}
+
+.header-name{
+  color:black;
+  text-align:center;
+  font-size: 2.5em;
+  font-family:'Times New Roman', Times, serif;
+}
+
+.p {
+  color:black;
+  font-size: 100px;
+  
 }
