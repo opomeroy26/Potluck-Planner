@@ -24,7 +24,6 @@ function CreateEvent({handleAddToEventsFeed, handleReturnToFeed, handleAddToMyEv
 
     function handleSubmit(e){
         e.preventDefault()
-        console.log(e)
         fetch("http://localhost:9292/events", {
             method: 'POST',
             headers: {
@@ -33,8 +32,8 @@ function CreateEvent({handleAddToEventsFeed, handleReturnToFeed, handleAddToMyEv
             body: JSON.stringify(formState),
         })
         .then(handleAddToEventsFeed(formState))
+        .then(handleAddToMyEvents(formState))
         .then(setFormState(initialFormState))
-        // .then(handleAddToMyEvents(formState))
 
 
     }

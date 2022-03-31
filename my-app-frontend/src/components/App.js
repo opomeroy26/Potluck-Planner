@@ -114,7 +114,7 @@ function App() {
 
     function onAddToMyEvents(event){
         console.log("adding to your events page")
-        setMyEvents([event, ...events])
+        setMyEvents([event, ...myEvents])
     }
 
     function onAddToMyShoppingList(item){
