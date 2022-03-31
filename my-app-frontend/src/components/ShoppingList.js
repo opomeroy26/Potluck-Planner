@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ShoppingListCard from './ShoppingListCard';
+import '../App.css'
 
 
 function ShoppingList({shoppingList, handleAddToShoppingList, handleShoppingListDelete}){
@@ -46,7 +47,7 @@ function ShoppingList({shoppingList, handleAddToShoppingList, handleShoppingList
 
 
         return(
-            <div className='row content d-flex justify-content-center m-2 p-2' >
+            <div className='row content d-flex justify-content-center m-2 p-2' id="shoplistheader" >
                 <h3>My Shopping List</h3>
             {list}
 
