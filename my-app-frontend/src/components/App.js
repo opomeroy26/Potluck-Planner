@@ -79,8 +79,10 @@ function App() {
     function onDeleteClick(event){
         console.log("deleting event", event)
         fetch(`http://localhost:9292/events/${event.id}`, {method: "DELETE"})
+        fetch(`http://localhost:9292/myevents/${event.id}`, {method: "DELETE"})
         setEvents(events.filter((eventItem) => eventItem !== event))
-
+        setMyEvents(myEvents.filter((eventItem)=> eventItem !== event))
+ 
     }
 
     function onHolidayClick(){
@@ -169,6 +171,7 @@ function App() {
             <Route exact path = "/myevents">
                 <MyEvents 
                     events = {myEvents}
+                    handleDeleteClick = {onDeleteClick}
                 />
             </Route>
 
