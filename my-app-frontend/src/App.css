@@ -6,7 +6,7 @@
 }
 
 .App-header {
-  background-color: rgb(19, 105, 19);
+  background-color: rgb(88, 155, 88);
   display: flex;
   min-height: 10vh;
   justify-content: center;
@@ -15,7 +15,8 @@
   align-items: center;
   color: white;
   /* text-align: left; */
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
 .app-body-container {
   background-color:#F2F4F3;
@@ -62,7 +63,7 @@
   top:0;
   height: 100vh;
   z-index: 999;
-  background:  rgb(19, 105, 19);
+  background:  rgb(88, 155, 88);
   color: #fff;
   /* height:100vh !important; */
   text-align: center;
@@ -87,7 +88,8 @@
 #btn {
   background-color: white;
   color: black;
-  width:flex
+  width:flex;
+  margin-top: 10px;
 }
 
 #btn-two{
@@ -110,4 +112,13 @@
   color:black;
   font-size: 100px;
   
+}
+
+#form{
+  background-color: rgb(88, 155, 88);
+  color:white;
+}
+
+#eventpage{
+  background-color:white;
 }

@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Form from "./Form"
+import '../App.css'
 
 function CreateEvent({handleAddToEventsFeed, handleReturnToFeed, handleAddToMyEvents}){
 
@@ -40,14 +41,12 @@ function CreateEvent({handleAddToEventsFeed, handleReturnToFeed, handleAddToMyEv
 
 
     return(
-        <div>
-            <h1> Create your Event </h1>
+        <div className='row content d-flex justify-content-center m-2 p-2' id="eventpage">
+
             <Form handleChange={handleChange} handleSubmit={handleSubmit} formState={formState}/>
-            <button onClick={handleReturnToFeed}>Return to Feed</button>
-            
-
-            
-
+            <div>
+                <button id='btn' onClick={handleReturnToFeed}>Cancel</button>
+            </div>
         </div>
     )
 }
