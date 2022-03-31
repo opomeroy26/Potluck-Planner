@@ -124,6 +124,12 @@ function App() {
 
     }
 
+    function onShoppingListDelete(item){
+        console.log("deleting", item.id)
+        fetch(`http://localhost:9292/shoppinglist/${item.id}`, {method: "DELETE"})
+        setShoppingList(shoppingList.filter((listItem)=> listItem !==item))
+    }
+
 
     return (
     <div className="App">
@@ -168,6 +174,7 @@ function App() {
                 <ShoppingList 
                     shoppingList = {shoppingList}
                     handleAddToShoppingList = {onAddToMyShoppingList}
+                    handleShoppingListDelete = {onShoppingListDelete}
                 />
             </Route>
 

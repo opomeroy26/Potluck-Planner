@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 import ShoppingListCard from './ShoppingListCard';
 
 
-function ShoppingList({shoppingList, handleAddToShoppingList}){
+function ShoppingList({shoppingList, handleAddToShoppingList, handleShoppingListDelete}){
     const list = shoppingList.map((listObj) => (
         <ShoppingListCard
             key={listObj.id}
             list={listObj}
+            handleShoppingListDelete={handleShoppingListDelete}
         />
     ))
     
@@ -28,9 +29,16 @@ function ShoppingList({shoppingList, handleAddToShoppingList}){
 
     function onAddToMyShoppingList(e){
             e.preventDefault()
-            console.log("adding to shopping list", e.target)
-            handleAddToShoppingList(listBox)
-            setListBox(initialListBox)
+            // console.log("adding to shopping list", e.target)
+            fetch("http://localhost:9292/shoppinglist", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(listBox)
+            })
+            .then(handleAddToShoppingList(listBox))
+            .then(setListBox(initialListBox))
 
             
     
