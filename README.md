@@ -1,14 +1,27 @@
-# Potluck-Planner
+# Potluck Planner
 
 <img width="1078" alt="Screen Shot 2022-04-01 at 9 50 22 AM" src="https://user-images.githubusercontent.com/95717751/161307679-4b9e66aa-8b17-4b82-9e2a-422a027ceec0.png">
 
+Potluck Planner allows users to keep track of events they are invited to, reply their attendance, and comment what they will be bringing. They can sort through their events by date or category, and add items to their shopping list. Users can create their own events and let their invitees know details of the invent and add food suggestions.
 
-# Getting Started with Create React App
+# Technologies
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). I used a Sinatra based backend, which can be found here: https://github.com/opomeroy26/phase-3-sinatra-react-project
+This project's frontend was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). The backend was created using Active Record and a Sinatra based backend, which can be found here: https://github.com/opomeroy26/phase-3-sinatra-react-project
 
-You can clone down both repos from here by running `npm install && npm start`.
-Run `bundle install` and `rake server` from the backend repo.
+# Launch
+To launch the frontend:
+`npm install`
+`npm start`
+
+To launch the backend:
+`bundle install`
+`rake db:migrate`
+`rake db:seed`
+`bundle exec rake server`
+
+Frontend: Navigate to `localhost:3000/`
+Backend: Navigate to `localhost:9292/events`
+
 
 ## Available Scripts
 
@@ -77,3 +90,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+
+# Created By
+Olivia Pomeroy
+Email: <a href="mailto: opomeroy26@gmail.com">opomeroy26@gmail.com</a>
+Github: <a href="https://github.com/opomeroy26">opomeroy26</a>
