@@ -10,14 +10,18 @@ This project's frontend was bootstrapped with [Create React App](https://github.
 
 # Launch
 To launch the frontend:
-`npm install`
-`npm start`
+```
+$ npm install`
+$ npm start`
+```
 
 To launch the backend:
-`bundle install`
-`rake db:migrate`
-`rake db:seed`
-`bundle exec rake server`
+```
+$ bundle install`
+$ rake db:migrate`
+$ rake db:seed`
+$ bundle exec rake server`
+```
 
 Frontend: Navigate to `localhost:3000/`
 Backend: Navigate to `localhost:9292/events`
@@ -91,7 +95,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
-# Created By
-Olivia Pomeroy
+## Created By
+###Olivia Pomeroy
 Email: <a href="mailto: opomeroy26@gmail.com">opomeroy26@gmail.com</a>
+
 Github: <a href="https://github.com/opomeroy26">opomeroy26</a>
