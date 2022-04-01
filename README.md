@@ -3,10 +3,12 @@
 <img width="1078" alt="Screen Shot 2022-04-01 at 9 50 22 AM" src="https://user-images.githubusercontent.com/95717751/161307679-4b9e66aa-8b17-4b82-9e2a-422a027ceec0.png">
 
 
-
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). I used a Sinatra based backend, which can be found here: https://github.com/opomeroy26/phase-3-sinatra-react-project
+
+You can clone down both repos from here by running `npm install && npm start`.
+Run `bundle install` and `rake server` from the backend repo.
 
 ## Available Scripts
 
