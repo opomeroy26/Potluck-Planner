@@ -41,25 +41,25 @@ function App() {
     }, [])
 
     useEffect(()=> {
-        fetch("http://localhost:9292/categories/85")
+        fetch("http://localhost:9292/categories/93")
         .then((r)=> r.json())
         .then(setHolidays)
     }, [])
 
     useEffect(()=> {
-        fetch("http://localhost:9292/categories/86")
+        fetch("http://localhost:9292/categories/94")
         .then((r)=> r.json())
         .then(setBirthdays)
     },[])
 
     useEffect(()=> {
-        fetch("http://localhost:9292/categories/87")
+        fetch("http://localhost:9292/categories/95")
         .then((r)=> r.json())
         .then(setCelebrations)
     },[])
 
     useEffect(()=> {
-        fetch("http://localhost:9292/categories/88")
+        fetch("http://localhost:9292/categories/96")
         .then((r)=> r.json())
         .then(setMiscellaneous)
     },[])
@@ -121,6 +121,7 @@ function App() {
     }
 
     function onAddToMyEvents(event){
+        history.push('/')
         console.log("adding to your events page")
         setMyEvents([event, ...myEvents])
     }
@@ -136,6 +137,12 @@ function App() {
         console.log("deleting", item.id)
         fetch(`http://localhost:9292/shoppinglist/${item.id}`, {method: "DELETE"})
         setShoppingList(shoppingList.filter((listItem)=> listItem !==item))
+    }
+
+    function onAddToCommentsList(e, comment) {
+        e.preventDefault()
+        console.log("commenting from app page", comment)
+        setEvents(comment)
     }
 
 
@@ -157,6 +164,7 @@ function App() {
                 <HomePage 
                     events = {events}
                     handleDeleteClick = {onDeleteClick}
+                    handleAddToCommentsList = {onAddToCommentsList}
                 />
             </Route>
 

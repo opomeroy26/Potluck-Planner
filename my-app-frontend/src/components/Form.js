@@ -193,10 +193,10 @@ function Form({handleChange, handleSubmit, formState}){
                                             name='category_id'
                                             onChange={handleChange}>
                                             <option value="NA">Choose a Category</option>
-                                            <option value="85">Holiday</option>
-                                            <option value="86">Birthday</option>
-                                            <option value="87">Celebration</option>
-                                            <option value="88">Miscellaneous</option>
+                                            <option value="93">Holiday</option>
+                                            <option value="94">Birthday</option>
+                                            <option value="95">Celebration</option>
+                                            <option value="96">Miscellaneous</option>
                                         </select>
                                     </div>
                                 </div>

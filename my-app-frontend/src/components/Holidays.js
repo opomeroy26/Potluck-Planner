@@ -1,7 +1,10 @@
 import React from "react";
 import EventCard from "./EventCard";
+import CommentsCard from "./CommentsCard";
 
 function Holidays({holidays}){
+
+    
     const holiday = holidays.events.map((holidayObj) => (
         <EventCard 
             key={holidayObj.id}

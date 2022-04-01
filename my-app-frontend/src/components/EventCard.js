@@ -1,8 +1,29 @@
 import React, {useState} from 'react'
 import '../App.css'
+import CommentsCard from './CommentsCard'
 
-function EventCard({event, handleDeleteClick}){
-    const {event_name, host, details, date, food_suggestions, image, } = event
+function EventCard({event, handleDeleteClick, handleAddToCommentsList}){
+    const {event_name, host, details, date, food_suggestions, image,} = event
+
+    // const commenting = event.comments.map((commentObj) => (
+    //     <CommentsCard
+    //         key={commentObj.id}
+    //         commentObj={commentObj}
+    //     />
+    // ))
+
+    const initialListBox = {
+    comment:'',
+}
+
+const [listBox, setListBox]=useState(initialListBox)
+
+const handleListChange = (e) => {
+    const {name, value} = e.target;
+    console.log(e.target.value)
+    setListBox(listBox=>({...listBox, [name]: value}))
+}
+
 
     const [style, setStyle] = useState("button")
     const [style2, setStyle2] = useState("button")
@@ -23,6 +44,22 @@ function EventCard({event, handleDeleteClick}){
         }
     }
 
+    function onCommentSubmit(e){
+        // e.preventDefault()
+        // console.log("adding to comments list", e.target)
+        // fetch("http://localhost:9292/shoppinglist", {
+        //     method: "POST",
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(listBox)
+        // })
+        // .then(handleAddToShoppingList(listBox))
+        // .then(setListBox(initialListBox))
+        (handleAddToCommentsList(e, listBox))
+        setListBox(initialListBox)
+    }
+
 
 
     // Assuming logged in as username "Olivia". Will need to be more dynamic based off user later on
@@ -37,19 +74,18 @@ function EventCard({event, handleDeleteClick}){
                 </div>
                 <div className="list-group-flush">
                     <ul>{food_suggestions}</ul> 
-                    {/* Need to put it in nested array if I want to check off the items or put them into list form */}
-                    {/* <li>Two</li>
-                    <li>Three</li> */}
                 </div>
                 <div>
                     <button onClick={()=>handleDeleteClick(event)}>Delete Event</button>
-                    <form id="comment-form" className="comment-form">
+                    <form id="comment-form" className="comment-form" onSubmit={onCommentSubmit}>
                         <input
                             className="comment-input"
                             type="text"
                             name="comment"
                             id="comment"
+                            value={listBox.comment}
                             placeholder="Add a comment"
+                            onChange={handleListChange}
                         />
                         <button className="comment-button" type="submit">Post</button>
                     </form>
@@ -68,30 +104,35 @@ function EventCard({event, handleDeleteClick}){
                     <h4 className="card-text">{details}</h4>
                 </div>
                 <div className="list-group-flush">
-                    <ul>{food_suggestions}</ul> 
-                    {/* Need to put it in nested array if I want to check off the items or put them into list form */}
-                    {/* <li>Two</li>
-                    <li>Three</li> */}
+                    <ul>{food_suggestions}</ul>
                 </div>
                 <div className="EventCard">
-                    <button className={style} onClick={changeStyle}>Attending</button> 
-                    
-                    <button className={style2} onClick={changeStyle2}>Not attending</button>
-                    
-                    <form id="comment-form" className="comment-form">
+                    <div>
+                        <button className={style} onClick={changeStyle}>Attending</button> 
+                        <button className={style2} onClick={changeStyle2}>Not attending</button>
+                    </div>
+                    <div className="list-group-flush"></div>
+                </div>
+                {/* {commenting} */}
+                <form id="comment-form" className="comment-form" onSubmit={onCommentSubmit}>
                         <input
                             className="comment-input"
                             type="text"
                             name="comment"
                             id="comment"
                             placeholder="Add a comment"
+                            value={listBox.comment}
+                            onChange={handleListChange}
                         />
                         <button className="comment-button" type="submit">Post</button>
                     </form>
-                </div>
             </div>
         )
     }
 }
 
 export default EventCard;
+
+
+
+
