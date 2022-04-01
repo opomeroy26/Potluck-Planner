@@ -1,6 +1,7 @@
 # Potluck-Planner
 
-<img width="1074" alt="Screen Shot 2022-04-01 at 9 49 02 AM" src="https://user-images.githubusercontent.com/95717751/161307606-16cc99c5-b7e3-4f5a-9830-cfe1e9d11cb6.png">
+<img width="1078" alt="Screen Shot 2022-04-01 at 9 50 22 AM" src="https://user-images.githubusercontent.com/95717751/161307679-4b9e66aa-8b17-4b82-9e2a-422a027ceec0.png">
+
 
 
 # Getting Started with Create React App
