@@ -134,3 +134,15 @@
 #shoplistheader {
   font-family:'Courier New', Courier, monospace
 }
+
+.button {
+  background-color: white;
+}
+
+.button2 {
+  background-color: red;
+}
+
+.button3 {
+  background-color: green;
+}

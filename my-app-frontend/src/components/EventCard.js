@@ -1,7 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
+import '../App.css'
 
 function EventCard({event, handleDeleteClick}){
     const {event_name, host, details, date, food_suggestions, image, } = event
+
+    const [style, setStyle] = useState("button")
+    const [style2, setStyle2] = useState("button")
+
+    const changeStyle = () => {
+        if (style === "button") {
+            return setStyle("button3")
+        } else {
+            return setStyle("button")
+        }
+    }
+
+    const changeStyle2 = () => {
+        if (style2 === "button") {
+            return setStyle2("button2")
+        } else {
+            return setStyle2("button")
+        }
+    }
+
 
 
     // Assuming logged in as username "Olivia". Will need to be more dynamic based off user later on
@@ -52,8 +73,11 @@ function EventCard({event, handleDeleteClick}){
                     {/* <li>Two</li>
                     <li>Three</li> */}
                 </div>
-                <div>
-                    <button>Attending</button> <button>Not attending</button>
+                <div className="EventCard">
+                    <button className={style} onClick={changeStyle}>Attending</button> 
+                    
+                    <button className={style2} onClick={changeStyle2}>Not attending</button>
+                    
                     <form id="comment-form" className="comment-form">
                         <input
                             className="comment-input"
